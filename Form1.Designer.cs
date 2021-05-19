@@ -30,7 +30,6 @@ namespace GameFramework
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.player1 = new GameFramework.Player();
             this.enemy1 = new GameFramework.Enemy();
             this.enemy2 = new GameFramework.Enemy();
@@ -58,7 +57,7 @@ namespace GameFramework
             this.enemy1.BackColor = System.Drawing.Color.White;
             this.enemy1.Gravity = 0.5F;
             this.enemy1.Image = global::GameFramework.Properties.Resources.Enemy;
-            this.enemy1.Location = new System.Drawing.Point(496, 2);
+            this.enemy1.Location = new System.Drawing.Point(320, 91);
             this.enemy1.Name = "enemy1";
             this.enemy1.Size = new System.Drawing.Size(55, 58);
             this.enemy1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -70,7 +69,7 @@ namespace GameFramework
             this.enemy2.BackColor = System.Drawing.Color.White;
             this.enemy2.Gravity = 0.5F;
             this.enemy2.Image = global::GameFramework.Properties.Resources.Enemy;
-            this.enemy2.Location = new System.Drawing.Point(426, 2);
+            this.enemy2.Location = new System.Drawing.Point(157, 132);
             this.enemy2.Name = "enemy2";
             this.enemy2.Size = new System.Drawing.Size(55, 58);
             this.enemy2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -82,7 +81,7 @@ namespace GameFramework
             this.enemy3.BackColor = System.Drawing.Color.White;
             this.enemy3.Gravity = 0.5F;
             this.enemy3.Image = global::GameFramework.Properties.Resources.Enemy;
-            this.enemy3.Location = new System.Drawing.Point(591, 2);
+            this.enemy3.Location = new System.Drawing.Point(415, 91);
             this.enemy3.Name = "enemy3";
             this.enemy3.Size = new System.Drawing.Size(55, 58);
             this.enemy3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -99,7 +98,6 @@ namespace GameFramework
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 749);
             this.Controls.Add(this.enemy3);

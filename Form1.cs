@@ -18,7 +18,7 @@ namespace GameFramework
             InitializeComponent();
             game = new Game();
             game.addGameObject(player1, new MovementUpAndDown());
-            game.addGameObject(enemy1);
+            game.addGameObject(enemy1, new MovementAtAngle());
             game.addGameObject(enemy2);
             game.addGameObject(enemy3);
         }
