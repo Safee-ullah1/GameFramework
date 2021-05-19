@@ -8,6 +8,7 @@ namespace GameFramework
     abstract class GameObject : PictureBox
     {
         protected PhysicsComponent physics;
+        protected Movement movement = new Movement();
         //For adjusting gravity from the properties panel
         public float Gravity { get => physics.Gravity; set => physics.Gravity = value; }
         public GameObject()
@@ -21,8 +22,13 @@ namespace GameFramework
             this.Image = objectImage;
             physics = new PhysicsComponent(this, objectGravity);
         }
+        public void setMovement(Movement movement)
+        {
+            this.movement = movement;
+        }
         public virtual void update()
         {
+            movement.update(physics);
             physics.update();
             //Refresh();
         }

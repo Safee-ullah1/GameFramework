@@ -55,7 +55,7 @@ namespace GameFramework
             // 
             // enemy1
             // 
-            this.enemy1.BackColor = System.Drawing.Color.Transparent;
+            this.enemy1.BackColor = System.Drawing.Color.White;
             this.enemy1.Gravity = 0.5F;
             this.enemy1.Image = global::GameFramework.Properties.Resources.Enemy;
             this.enemy1.Location = new System.Drawing.Point(496, 2);
@@ -67,7 +67,7 @@ namespace GameFramework
             // 
             // enemy2
             // 
-            this.enemy2.BackColor = System.Drawing.Color.Transparent;
+            this.enemy2.BackColor = System.Drawing.Color.White;
             this.enemy2.Gravity = 0.5F;
             this.enemy2.Image = global::GameFramework.Properties.Resources.Enemy;
             this.enemy2.Location = new System.Drawing.Point(426, 2);
@@ -79,7 +79,7 @@ namespace GameFramework
             // 
             // enemy3
             // 
-            this.enemy3.BackColor = System.Drawing.Color.Transparent;
+            this.enemy3.BackColor = System.Drawing.Color.White;
             this.enemy3.Gravity = 0.5F;
             this.enemy3.Image = global::GameFramework.Properties.Resources.Enemy;
             this.enemy3.Location = new System.Drawing.Point(591, 2);
@@ -107,7 +107,7 @@ namespace GameFramework
             this.Controls.Add(this.enemy1);
             this.Controls.Add(this.player1);
             this.Name = "Form1";
-            this.Text = "t";
+            this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.player1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemy2)).EndInit();
