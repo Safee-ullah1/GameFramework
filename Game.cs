@@ -7,6 +7,14 @@ namespace GameFramework
     class Game
     {
         List<GameObject> gameObjects = new List<GameObject>();
+        private static Game gameInstance;
+        private Game() { }
+        public static Game Instance()
+        {
+            if (gameInstance == null)
+                gameInstance = new Game();
+            return gameInstance;
+        }
         public void addGameObject(GameObject gameObject, Movement movement)
         {
             gameObject.setMovement(movement);

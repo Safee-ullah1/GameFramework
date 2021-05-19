@@ -16,7 +16,7 @@ namespace GameFramework
         public Form1()
         {
             InitializeComponent();
-            game = new Game();
+            game = Game.Instance();
             game.addGameObject(player1, new MovementUpAndDown());
             game.addGameObject(enemy1, new MovementAtAngle());
             game.addGameObject(enemy2);
