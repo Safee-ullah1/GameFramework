@@ -9,7 +9,6 @@ namespace GameFramework
         Control gameObject;
         int movementSpeed;
         Form form;
-        bool up, down, left, right;
         PhysicsComponent physics;
         public MovementWithKey(Control gameObject, int movementSpeed)
         {
