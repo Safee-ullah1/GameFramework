@@ -6,6 +6,7 @@ namespace GameFramework
 {
     class Game
     {
+        ObjectCounter counter = ObjectCounter.Instance();
         List<GameObject> gameObjects = new List<GameObject>();
         private static Game gameInstance;
         private Game() { }
@@ -15,14 +16,10 @@ namespace GameFramework
                 gameInstance = new Game();
             return gameInstance;
         }
-        public void addGameObject(GameObject gameObject, Movement movement)
-        {
-            gameObject.setMovement(movement);
-            addGameObject(gameObject);
-        }
         public void addGameObject(GameObject gameObject)
         {
             gameObjects.Add(gameObject);
+            counter.count();
         }
         public void update()
         {

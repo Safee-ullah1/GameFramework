@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace GameFramework
 {
@@ -10,7 +11,8 @@ namespace GameFramework
         float accelerationX, accelerationY;
         float gravity;
         Control objectToAttach;
-
+        
+        public Point Location { get => objectToAttach.Location; }
         public float VelocityX { get => velocityX;}
         public float VelocityY { get => velocityY;}
         public float AccelerationX { get => accelerationX;}
@@ -39,6 +41,11 @@ namespace GameFramework
             objectToAttach.Left += (int)velocityX;
             velocityX += accelerationX;
             velocityY += accelerationY + gravity;
+        }
+        public void addSpeed(float velocityX, float velocityY)
+        {
+            this.velocityX += velocityX;
+            this.velocityY += velocityY;
         }
     }
 }

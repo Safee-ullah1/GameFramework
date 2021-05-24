@@ -5,30 +5,43 @@ using System.Drawing;
 
 namespace GameFramework
 {
-    abstract class GameObject : PictureBox
+    class GameObject
     {
         protected PhysicsComponent physics;
-        protected Movement movement = new Movement();
-        //For adjusting gravity from the properties panel
+        protected IMovement objectMovement;
         public float Gravity { get => physics.Gravity; set => physics.Gravity = value; }
-        public GameObject()
+        public GameObject(Control objectPicture, IMovement objectMovement, float objectGravity = 1)
         {
-            //for creating object from toolbox
-            physics = new PhysicsComponent(this);
+            //for creating object from a component
+            physics = new PhysicsComponent(objectPicture, objectGravity);
+            this.objectMovement = objectMovement;
         }
-        public GameObject(Image objectImage, float objectGravity)
+        public GameObject(Image objectImage, Point objectPosition, IMovement objectMovement, float objectGravity = 1)
         {
-            //for creating object programatically
-            this.Image = objectImage;
-            physics = new PhysicsComponent(this, objectGravity);
+            //for creating object from a an Image
+            PictureBox objectPB = createPictureBox(objectImage, objectPosition);
+            objectPB.SizeMode = PictureBoxSizeMode.AutoSize;
+            physics = new PhysicsComponent(objectPB, objectGravity);
         }
-        public void setMovement(Movement movement)
+        public GameObject(Image objectImage, Point objectPosition, Size objectSize, IMovement objectMovement, float objectGravity = 1)
         {
-            this.movement = movement;
+            //for creating object of custom size from a an Image
+            PictureBox objectPB = createPictureBox(objectImage, objectPosition);
+            objectPB.Size = objectSize;
+            physics = new PhysicsComponent(objectPB, objectGravity);
+        }
+        PictureBox createPictureBox(Image objectImage, Point objectPosition)
+        {
+            //Utility function
+            PictureBox objectPB = new PictureBox();
+            objectPB.Image = objectImage;
+            objectPB.Location = objectPosition;
+            objectPB.BackColor = Color.Transparent;
+            return objectPB;
         }
         public virtual void update()
         {
-            movement.update(physics);
+            objectMovement.update(physics);
             physics.update();
             //Refresh();
         }

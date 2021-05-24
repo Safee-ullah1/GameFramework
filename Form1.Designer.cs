@@ -30,63 +30,21 @@ namespace GameFramework
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.player1 = new GameFramework.Player();
-            this.enemy1 = new GameFramework.Enemy();
-            this.enemy2 = new GameFramework.Enemy();
-            this.enemy3 = new GameFramework.Enemy();
             this.gameLoopTimer = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.player1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy3)).BeginInit();
+            this.playerPictureBox = new System.Windows.Forms.PictureBox();
+            this.CircularPictureBox = new System.Windows.Forms.PictureBox();
+            this.UDPatrolPictureBox = new System.Windows.Forms.PictureBox();
+            this.LRPatrolPictureBox = new System.Windows.Forms.PictureBox();
+            this.rightwardPictureBox = new System.Windows.Forms.PictureBox();
+            this.leftwardPictureBox = new System.Windows.Forms.PictureBox();
+            this.objectCountLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.playerPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CircularPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UDPatrolPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LRPatrolPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightwardPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leftwardPictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // player1
-            // 
-            this.player1.Gravity = 1F;
-            this.player1.Image = global::GameFramework.Properties.Resources.Player;
-            this.player1.Location = new System.Drawing.Point(68, 2);
-            this.player1.Name = "player1";
-            this.player1.Size = new System.Drawing.Size(61, 76);
-            this.player1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.player1.TabIndex = 0;
-            this.player1.TabStop = false;
-            // 
-            // enemy1
-            // 
-            this.enemy1.BackColor = System.Drawing.Color.White;
-            this.enemy1.Gravity = 0.5F;
-            this.enemy1.Image = global::GameFramework.Properties.Resources.Enemy;
-            this.enemy1.Location = new System.Drawing.Point(320, 91);
-            this.enemy1.Name = "enemy1";
-            this.enemy1.Size = new System.Drawing.Size(55, 58);
-            this.enemy1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.enemy1.TabIndex = 1;
-            this.enemy1.TabStop = false;
-            // 
-            // enemy2
-            // 
-            this.enemy2.BackColor = System.Drawing.Color.White;
-            this.enemy2.Gravity = 0.5F;
-            this.enemy2.Image = global::GameFramework.Properties.Resources.Enemy;
-            this.enemy2.Location = new System.Drawing.Point(157, 132);
-            this.enemy2.Name = "enemy2";
-            this.enemy2.Size = new System.Drawing.Size(55, 58);
-            this.enemy2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.enemy2.TabIndex = 2;
-            this.enemy2.TabStop = false;
-            // 
-            // enemy3
-            // 
-            this.enemy3.BackColor = System.Drawing.Color.White;
-            this.enemy3.Gravity = 0.5F;
-            this.enemy3.Image = global::GameFramework.Properties.Resources.Enemy;
-            this.enemy3.Location = new System.Drawing.Point(415, 91);
-            this.enemy3.Name = "enemy3";
-            this.enemy3.Size = new System.Drawing.Size(55, 58);
-            this.enemy3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.enemy3.TabIndex = 3;
-            this.enemy3.TabStop = false;
             // 
             // gameLoopTimer
             // 
@@ -94,33 +52,117 @@ namespace GameFramework
             this.gameLoopTimer.Interval = 20;
             this.gameLoopTimer.Tick += new System.EventHandler(this.gameLoopTimer_Tick);
             // 
+            // playerPictureBox
+            // 
+            this.playerPictureBox.Image = global::GameFramework.Properties.Resources.Player;
+            this.playerPictureBox.Location = new System.Drawing.Point(56, 61);
+            this.playerPictureBox.Name = "playerPictureBox";
+            this.playerPictureBox.Size = new System.Drawing.Size(93, 97);
+            this.playerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.playerPictureBox.TabIndex = 0;
+            this.playerPictureBox.TabStop = false;
+            // 
+            // CircularPictureBox
+            // 
+            this.CircularPictureBox.Image = global::GameFramework.Properties.Resources.Enemy;
+            this.CircularPictureBox.Location = new System.Drawing.Point(354, 326);
+            this.CircularPictureBox.Name = "CircularPictureBox";
+            this.CircularPictureBox.Size = new System.Drawing.Size(93, 97);
+            this.CircularPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CircularPictureBox.TabIndex = 1;
+            this.CircularPictureBox.TabStop = false;
+            // 
+            // UDPatrolPictureBox
+            // 
+            this.UDPatrolPictureBox.Image = global::GameFramework.Properties.Resources.Enemy;
+            this.UDPatrolPictureBox.Location = new System.Drawing.Point(627, 42);
+            this.UDPatrolPictureBox.Name = "UDPatrolPictureBox";
+            this.UDPatrolPictureBox.Size = new System.Drawing.Size(93, 97);
+            this.UDPatrolPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.UDPatrolPictureBox.TabIndex = 2;
+            this.UDPatrolPictureBox.TabStop = false;
+            // 
+            // LRPatrolPictureBox
+            // 
+            this.LRPatrolPictureBox.Image = global::GameFramework.Properties.Resources.Enemy;
+            this.LRPatrolPictureBox.Location = new System.Drawing.Point(12, 326);
+            this.LRPatrolPictureBox.Name = "LRPatrolPictureBox";
+            this.LRPatrolPictureBox.Size = new System.Drawing.Size(93, 97);
+            this.LRPatrolPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LRPatrolPictureBox.TabIndex = 3;
+            this.LRPatrolPictureBox.TabStop = false;
+            // 
+            // rightwardPictureBox
+            // 
+            this.rightwardPictureBox.Image = global::GameFramework.Properties.Resources.Enemy;
+            this.rightwardPictureBox.Location = new System.Drawing.Point(354, 200);
+            this.rightwardPictureBox.Name = "rightwardPictureBox";
+            this.rightwardPictureBox.Size = new System.Drawing.Size(93, 97);
+            this.rightwardPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rightwardPictureBox.TabIndex = 4;
+            this.rightwardPictureBox.TabStop = false;
+            // 
+            // leftwardPictureBox
+            // 
+            this.leftwardPictureBox.Image = global::GameFramework.Properties.Resources.Enemy;
+            this.leftwardPictureBox.Location = new System.Drawing.Point(354, 429);
+            this.leftwardPictureBox.Name = "leftwardPictureBox";
+            this.leftwardPictureBox.Size = new System.Drawing.Size(93, 97);
+            this.leftwardPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.leftwardPictureBox.TabIndex = 5;
+            this.leftwardPictureBox.TabStop = false;
+            // 
+            // objectCountLabel
+            // 
+            this.objectCountLabel.AutoSize = true;
+            this.objectCountLabel.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.objectCountLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.objectCountLabel.Location = new System.Drawing.Point(336, 9);
+            this.objectCountLabel.Name = "objectCountLabel";
+            this.objectCountLabel.Size = new System.Drawing.Size(122, 27);
+            this.objectCountLabel.TabIndex = 6;
+            this.objectCountLabel.Text = "Objects: 0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(6)))), ((int)(((byte)(34)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 749);
-            this.Controls.Add(this.enemy3);
-            this.Controls.Add(this.enemy2);
-            this.Controls.Add(this.enemy1);
-            this.Controls.Add(this.player1);
+            this.ClientSize = new System.Drawing.Size(800, 581);
+            this.Controls.Add(this.objectCountLabel);
+            this.Controls.Add(this.leftwardPictureBox);
+            this.Controls.Add(this.rightwardPictureBox);
+            this.Controls.Add(this.LRPatrolPictureBox);
+            this.Controls.Add(this.UDPatrolPictureBox);
+            this.Controls.Add(this.CircularPictureBox);
+            this.Controls.Add(this.playerPictureBox);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.player1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CircularPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UDPatrolPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LRPatrolPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightwardPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leftwardPictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Player player1;
-        private Enemy enemy1;
-        private Enemy enemy2;
-        private Enemy enemy3;
+      
         private System.Windows.Forms.Timer gameLoopTimer;
+        private System.Windows.Forms.PictureBox player;
+        private System.Windows.Forms.PictureBox CircularPictureBox;
+        private System.Windows.Forms.PictureBox UDPatrolPictureBox;
+        private System.Windows.Forms.PictureBox LRPatrolPictureBox;
+        private System.Windows.Forms.PictureBox rightwardPictureBox;
+        private System.Windows.Forms.PictureBox leftwardEnemy;
+        private System.Windows.Forms.PictureBox leftwardPictureBox;
+        private System.Windows.Forms.PictureBox playerPictureBox;
+        private System.Windows.Forms.Label objectCountLabel;
     }
 }
 
