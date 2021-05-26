@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GameFramework
+namespace SectionA2020CS13Framework
 {
-    class MovementRight: IMovement
+    public class MovementRight : IMovement
     {
         int movementSpeed;
         public MovementRight(int movementSpeed)

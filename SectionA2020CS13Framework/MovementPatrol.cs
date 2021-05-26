@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-namespace GameFramework
+namespace SectionA2020CS13Framework
 {
-    class MovementPatrol : IMovement
+    public class MovementPatrol : IMovement
     {
         int strideLength, movementSpeed;
         PatrolMode patrolMode;
@@ -43,7 +43,7 @@ namespace GameFramework
 
         }
     }
-    enum PatrolMode
+    public enum PatrolMode
     {
         upDown,
         leftRight

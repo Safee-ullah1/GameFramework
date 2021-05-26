@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace GameFramework
+namespace SectionA2020CS13Framework
 {
     // Interface for using in game objects
-    interface IMovement
+    public interface IMovement
     {
         void update(PhysicsComponent physics);
     }

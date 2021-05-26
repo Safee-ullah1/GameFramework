@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
-namespace GameFramework
+namespace SectionA2020CS13Framework
 {
-    class ObjectFactory
+    public class ObjectFactory
     {
-        int[] objectCount = new int[20];
+        int[] objectCount = new int[10];
         private static ObjectFactory counterInstance;
         private ObjectFactory() { }
         public static ObjectFactory Instance()
@@ -17,17 +17,17 @@ namespace GameFramework
         }
         public GameObject createObject(Control objectPicture, IMovement objectMovement, ObjectType objectType, float objectGravity = 1)
         {
-            ++objectCount[(int)objectType];
+            objectCount[(int)objectType]++;
             return new GameObject(objectPicture, objectMovement, objectGravity);
         }
         public GameObject createObject(Image objectImage, Point objectPosition, IMovement objectMovement, ObjectType objectType, float objectGravity = 1)
         {
-            ++objectCount[(int)objectType];
+            objectCount[(int)objectType]++;
             return new GameObject(objectImage, objectPosition, objectMovement, objectGravity);
         }
         public GameObject createObject(Image objectImage, Point objectPosition, Size objectSize, IMovement objectMovement, ObjectType objectType, float objectGravity = 1)
         {
-            ++objectCount[(int)objectType];
+            objectCount[(int)objectType]++;
             return new GameObject(objectImage, objectPosition, objectSize, objectMovement, objectGravity);
         }
         public int getCount(ObjectType objectType) => objectCount[(int)objectType];
@@ -38,13 +38,14 @@ namespace GameFramework
             return count;
         }
     }
-    enum ObjectType
+    public enum ObjectType
     {
         player,
         circlingEnemy,
         patrollingEnemy,
         rightMovingEnemy,
         leftMovingEnemy,
-        nonMovingObject
+        nonMovingObject,
+        customMovementObject
     }
 }

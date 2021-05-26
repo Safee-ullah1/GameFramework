@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace GameFramework
+namespace SectionA2020CS13Framework
 {
-    class GameObject
+    public class GameObject
     {
         protected PhysicsComponent physics;
         protected IMovement objectMovement;
         public float Gravity { get => physics.Gravity; set => physics.Gravity = value; }
-        public GameObject(Control objectPicture, IMovement objectMovement, float objectGravity = 1)
+        internal GameObject(Control objectPicture, IMovement objectMovement, float objectGravity = 1)
         {
             //for creating object from a component
             physics = new PhysicsComponent(objectPicture, objectGravity);
             this.objectMovement = objectMovement;
         }
-        public GameObject(Image objectImage, Point objectPosition, IMovement objectMovement, float objectGravity = 1)
+        internal GameObject(Image objectImage, Point objectPosition, IMovement objectMovement, float objectGravity = 1)
         {
             //for creating object from a an Image
             PictureBox objectPB = createPictureBox(objectImage, objectPosition);
             objectPB.SizeMode = PictureBoxSizeMode.AutoSize;
             physics = new PhysicsComponent(objectPB, objectGravity);
         }
-        public GameObject(Image objectImage, Point objectPosition, Size objectSize, IMovement objectMovement, float objectGravity = 1)
+        internal GameObject(Image objectImage, Point objectPosition, Size objectSize, IMovement objectMovement, float objectGravity = 1)
         {
             //for creating object of custom size from a an Image
             PictureBox objectPB = createPictureBox(objectImage, objectPosition);

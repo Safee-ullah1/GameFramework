@@ -1,5 +1,5 @@
 ﻿
-namespace GameFramework
+namespace GameProject
 {
     partial class Form1
     {
@@ -54,7 +54,7 @@ namespace GameFramework
             // 
             // playerPictureBox
             // 
-            this.playerPictureBox.Image = global::GameFramework.Properties.Resources.Player;
+            this.playerPictureBox.Image = global::GameProject.Properties.Resources.Player;
             this.playerPictureBox.Location = new System.Drawing.Point(56, 61);
             this.playerPictureBox.Name = "playerPictureBox";
             this.playerPictureBox.Size = new System.Drawing.Size(93, 97);
@@ -64,7 +64,7 @@ namespace GameFramework
             // 
             // CircularPictureBox
             // 
-            this.CircularPictureBox.Image = global::GameFramework.Properties.Resources.Enemy;
+            this.CircularPictureBox.Image = global::GameProject.Properties.Resources.Enemy;
             this.CircularPictureBox.Location = new System.Drawing.Point(354, 326);
             this.CircularPictureBox.Name = "CircularPictureBox";
             this.CircularPictureBox.Size = new System.Drawing.Size(93, 97);
@@ -74,7 +74,7 @@ namespace GameFramework
             // 
             // UDPatrolPictureBox
             // 
-            this.UDPatrolPictureBox.Image = global::GameFramework.Properties.Resources.Enemy;
+            this.UDPatrolPictureBox.Image = global::GameProject.Properties.Resources.Enemy;
             this.UDPatrolPictureBox.Location = new System.Drawing.Point(627, 42);
             this.UDPatrolPictureBox.Name = "UDPatrolPictureBox";
             this.UDPatrolPictureBox.Size = new System.Drawing.Size(93, 97);
@@ -84,7 +84,7 @@ namespace GameFramework
             // 
             // LRPatrolPictureBox
             // 
-            this.LRPatrolPictureBox.Image = global::GameFramework.Properties.Resources.Enemy;
+            this.LRPatrolPictureBox.Image = global::GameProject.Properties.Resources.Enemy;
             this.LRPatrolPictureBox.Location = new System.Drawing.Point(12, 326);
             this.LRPatrolPictureBox.Name = "LRPatrolPictureBox";
             this.LRPatrolPictureBox.Size = new System.Drawing.Size(93, 97);
@@ -94,7 +94,7 @@ namespace GameFramework
             // 
             // rightwardPictureBox
             // 
-            this.rightwardPictureBox.Image = global::GameFramework.Properties.Resources.Enemy;
+            this.rightwardPictureBox.Image = global::GameProject.Properties.Resources.Enemy;
             this.rightwardPictureBox.Location = new System.Drawing.Point(354, 200);
             this.rightwardPictureBox.Name = "rightwardPictureBox";
             this.rightwardPictureBox.Size = new System.Drawing.Size(93, 97);
@@ -104,7 +104,7 @@ namespace GameFramework
             // 
             // leftwardPictureBox
             // 
-            this.leftwardPictureBox.Image = global::GameFramework.Properties.Resources.Enemy;
+            this.leftwardPictureBox.Image = global::GameProject.Properties.Resources.Enemy;
             this.leftwardPictureBox.Location = new System.Drawing.Point(354, 429);
             this.leftwardPictureBox.Name = "leftwardPictureBox";
             this.leftwardPictureBox.Size = new System.Drawing.Size(93, 97);

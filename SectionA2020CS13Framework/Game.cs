@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace GameFramework
+namespace SectionA2020CS13Framework
 {
-    class Game
+    public class Game
     {
         List<GameObject> gameObjects = new List<GameObject>();
         private static Game gameInstance;

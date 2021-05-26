@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace GameFramework
+namespace SectionA2020CS13Framework
 {
-    class PhysicsComponent
+    public class PhysicsComponent
     {
         float velocityX, velocityY;
         float accelerationX, accelerationY;

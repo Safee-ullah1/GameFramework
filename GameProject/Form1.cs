@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SectionA2020CS13Framework;
 
-namespace GameFramework
+
+namespace GameProject
 {
     public partial class Form1 : Form
     {
@@ -32,7 +34,7 @@ namespace GameFramework
             game.addGameObject(rightwardEnemy);
             game.addGameObject(leftwardEnemy);
         }
-
+        
         private void gameLoopTimer_Tick(object sender, EventArgs e)
         {
             game.update();

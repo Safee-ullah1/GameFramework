@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace GameFramework
+namespace SectionA2020CS13Framework
 {
-    class MovementCircular :IMovement
+    public class MovementCircular :IMovement
     {
         Control objectToMove;
         int startX, startY;
