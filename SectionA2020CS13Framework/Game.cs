@@ -8,11 +8,15 @@ namespace SectionA2020CS13Framework
     {
         List<GameObject> gameObjects = new List<GameObject>();
         private static Game gameInstance;
+        private static readonly object locker = new object();
         private Game() { }
         public static Game Instance()
         {
-            if (gameInstance == null) gameInstance = new Game();
-            return gameInstance;
+            lock (locker)
+            {
+                if (gameInstance == null) gameInstance = new Game();
+                return gameInstance;
+            }
         }
         public void addGameObject(GameObject gameObject)
         {

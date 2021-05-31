@@ -7,14 +7,18 @@ namespace SectionA2020CS13Framework
     public class MovementFactory
     {
         static MovementFactory factoryInstance;
+        private static readonly object locker = new object();
         List<IMovement> available = new List<IMovement>();
         List<IMovement> occupied = new List<IMovement>();
         int[] movementCount = new int[3];
         private MovementFactory() { }
         public static MovementFactory Instance()
         {
-            if (factoryInstance == null) factoryInstance = new MovementFactory();
-            return factoryInstance;
+            lock (locker)
+            {
+                if (factoryInstance == null) factoryInstance = new MovementFactory();
+                return factoryInstance;
+            }
         }
         public IMovement createMovement(MovementType movementType)
         {
@@ -31,16 +35,19 @@ namespace SectionA2020CS13Framework
 
             else
             {
-                IMovement newMovement;
-                if (movementType == MovementType.right) newMovement = new MovementRight();
-                else if (movementType == MovementType.left) newMovement = new MovementLeft();
-                else newMovement = new MovementWithKey();
+                lock (locker)
+                {
+                    IMovement newMovement;
+                    if (movementType == MovementType.right) newMovement = new MovementRight();
+                    else if (movementType == MovementType.left) newMovement = new MovementLeft();
+                    else newMovement = new MovementWithKey();
 
-                if (newMovement.IsExclusive) occupied.Add(newMovement);
-                else available.Add(newMovement);
+                    if (newMovement.IsExclusive) occupied.Add(newMovement);
+                    else available.Add(newMovement);
 
-                movementCount[(int)newMovement.MovementType]++;
-                return newMovement;
+                    movementCount[(int)newMovement.MovementType]++;
+                    return newMovement;
+                }
             }
         }
         public int getCount(MovementType movementType) => movementCount[(int)movementType];
@@ -56,7 +63,7 @@ namespace SectionA2020CS13Framework
                 if (movement.MovementType == typeToLookFor) return movement;
             return null;
         }
-        public void free(IMovement movement)
+        public void release(IMovement movement)
         {
             if (movement.IsExclusive)
             {

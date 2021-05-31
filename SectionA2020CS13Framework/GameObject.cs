@@ -24,6 +24,6 @@ namespace SectionA2020CS13Framework
             physics.update();
             //Refresh();
         }
-        ~GameObject() => movementFactory.free(objectMovement);
+        ~GameObject() => movementFactory.release(objectMovement);
     }
 }

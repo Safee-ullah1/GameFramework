@@ -9,13 +9,18 @@ namespace SectionA2020CS13Framework
         int[] objectCount = new int[10];
         MovementFactory movementFactory = MovementFactory.Instance();
         private static ObjectFactory factoryInstance;
+        private static readonly object locker = new object();
         private ObjectFactory() { }
         public static ObjectFactory Instance()
         {
-            if (factoryInstance == null) 
-                factoryInstance = new ObjectFactory();
+            lock (locker)
+            {
+                if (factoryInstance == null)
+                    factoryInstance = new ObjectFactory();
 
-            return factoryInstance;
+                return factoryInstance;
+
+            }
         }
         public GameObject createObject(Control objectPicture, MovementType movementType, ObjectType objectType, float objectGravity = 1)
         {
