@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SectionA2020CS13Framework;
+using System;
 using System.Windows.Forms;
-using SectionA2020CS13Framework;
 
 
 namespace GameProject
@@ -16,29 +9,25 @@ namespace GameProject
     {
         Game game;
         ObjectFactory factory;
+        MovementFactory movementFactory;
         public Form1()
         {
             InitializeComponent();
             game = Game.Instance();
             factory = ObjectFactory.Instance();
-            GameObject player = factory.createObject(playerPictureBox, new MovementWithKey(playerPictureBox, 15), ObjectType.player);
-            GameObject circularPatrolEnemy = factory.createObject(CircularPictureBox, new MovementCircular(CircularPictureBox, 100), ObjectType.circlingEnemy);
-            GameObject upDownPatrolEnemy = factory.createObject(UDPatrolPictureBox, new MovementPatrol(500, 5, PatrolMode.upDown), ObjectType.patrollingEnemy);
-            GameObject leftRightPatrolEnemy = factory.createObject(LRPatrolPictureBox, new MovementPatrol(500, 5, PatrolMode.leftRight), ObjectType.patrollingEnemy);
-            GameObject rightwardEnemy = factory.createObject(rightwardPictureBox, new MovementRight(5), ObjectType.rightMovingEnemy);
-            GameObject leftwardEnemy = factory.createObject(leftwardPictureBox, new MovementLeft(5), ObjectType.leftMovingEnemy);
-            game.addGameObject(player);
-            game.addGameObject(circularPatrolEnemy);
-            game.addGameObject(upDownPatrolEnemy);
-            game.addGameObject(leftRightPatrolEnemy);
-            game.addGameObject(rightwardEnemy);
-            game.addGameObject(leftwardEnemy);
+            movementFactory = MovementFactory.Instance();
+            game.addGameObject(factory.createObject(playerPictureBox, MovementType.keyBoard, ObjectType.player, 0));
+            game.addGameObject(factory.createObject(CircularPictureBox, MovementType.left, ObjectType.circlingEnemy));
+            game.addGameObject(factory.createObject(UDPatrolPictureBox, MovementType.left, ObjectType.patrollingEnemy));
+            game.addGameObject(factory.createObject(LRPatrolPictureBox, MovementType.right, ObjectType.patrollingEnemy));
+            game.addGameObject(factory.createObject(rightwardPictureBox, MovementType.right, ObjectType.rightMovingEnemy));
+            game.addGameObject(factory.createObject(leftwardPictureBox, MovementType.left, ObjectType.leftMovingEnemy));
         }
-        
+
         private void gameLoopTimer_Tick(object sender, EventArgs e)
         {
             game.update();
-            objectCountLabel.Text = $"Objects: {factory.getTotalObjectsCount()}";
+            objectCountLabel.Text = $"Objects: {factory.getTotalObjectsCount()}, Movements: Left:{movementFactory.getCount(MovementType.left)} Right:{movementFactory.getCount(MovementType.right)} KeyBoard:{movementFactory.getCount(MovementType.keyBoard)}";
         }
     }
 }

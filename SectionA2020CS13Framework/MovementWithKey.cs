@@ -4,24 +4,22 @@ using System.Windows.Forms;
 
 namespace SectionA2020CS13Framework
 {
-    public class MovementWithKey : IMovement
+    public class MovementWithKey : Movement, IMovement
     {
-        Control gameObject;
-        int movementSpeed;
-        Form form;
         PhysicsComponent physics;
-        public MovementWithKey(Control gameObject, int movementSpeed)
-        {
-            this.gameObject = gameObject;
-            this.movementSpeed = movementSpeed;
-            form = gameObject.FindForm();
-        }
+        int movementSpeed = 5;
+        bool firstTimeCheck;
+        public MovementWithKey():base(MovementType.keyBoard, true) { }
         public void update(PhysicsComponent physics)
         {
-            physics.Gravity = 0;
-            this.physics = physics;
-            form.KeyDown += new KeyEventHandler(keyDownHandler);
-            form.KeyUp += new KeyEventHandler(keyUpHandler);
+            physics.Gravity = -1;
+            if (!firstTimeCheck)
+            {
+                this.physics = physics;
+                physics.ObjectForm.KeyDown += new KeyEventHandler(keyDownHandler);
+                physics.ObjectForm.KeyUp += new KeyEventHandler(keyUpHandler);
+                firstTimeCheck = true;
+            }
 
         }
         private void keyDownHandler(object sender, KeyEventArgs e)

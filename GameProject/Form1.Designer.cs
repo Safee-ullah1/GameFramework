@@ -65,9 +65,9 @@ namespace GameProject
             // CircularPictureBox
             // 
             this.CircularPictureBox.Image = global::GameProject.Properties.Resources.Enemy;
-            this.CircularPictureBox.Location = new System.Drawing.Point(354, 326);
+            this.CircularPictureBox.Location = new System.Drawing.Point(676, 372);
             this.CircularPictureBox.Name = "CircularPictureBox";
-            this.CircularPictureBox.Size = new System.Drawing.Size(93, 97);
+            this.CircularPictureBox.Size = new System.Drawing.Size(65, 61);
             this.CircularPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.CircularPictureBox.TabIndex = 1;
             this.CircularPictureBox.TabStop = false;
@@ -75,9 +75,9 @@ namespace GameProject
             // UDPatrolPictureBox
             // 
             this.UDPatrolPictureBox.Image = global::GameProject.Properties.Resources.Enemy;
-            this.UDPatrolPictureBox.Location = new System.Drawing.Point(627, 42);
+            this.UDPatrolPictureBox.Location = new System.Drawing.Point(679, 231);
             this.UDPatrolPictureBox.Name = "UDPatrolPictureBox";
-            this.UDPatrolPictureBox.Size = new System.Drawing.Size(93, 97);
+            this.UDPatrolPictureBox.Size = new System.Drawing.Size(62, 64);
             this.UDPatrolPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.UDPatrolPictureBox.TabIndex = 2;
             this.UDPatrolPictureBox.TabStop = false;
@@ -85,9 +85,9 @@ namespace GameProject
             // LRPatrolPictureBox
             // 
             this.LRPatrolPictureBox.Image = global::GameProject.Properties.Resources.Enemy;
-            this.LRPatrolPictureBox.Location = new System.Drawing.Point(12, 326);
+            this.LRPatrolPictureBox.Location = new System.Drawing.Point(12, 196);
             this.LRPatrolPictureBox.Name = "LRPatrolPictureBox";
-            this.LRPatrolPictureBox.Size = new System.Drawing.Size(93, 97);
+            this.LRPatrolPictureBox.Size = new System.Drawing.Size(65, 68);
             this.LRPatrolPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LRPatrolPictureBox.TabIndex = 3;
             this.LRPatrolPictureBox.TabStop = false;
@@ -95,9 +95,9 @@ namespace GameProject
             // rightwardPictureBox
             // 
             this.rightwardPictureBox.Image = global::GameProject.Properties.Resources.Enemy;
-            this.rightwardPictureBox.Location = new System.Drawing.Point(354, 200);
+            this.rightwardPictureBox.Location = new System.Drawing.Point(12, 346);
             this.rightwardPictureBox.Name = "rightwardPictureBox";
-            this.rightwardPictureBox.Size = new System.Drawing.Size(93, 97);
+            this.rightwardPictureBox.Size = new System.Drawing.Size(65, 65);
             this.rightwardPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rightwardPictureBox.TabIndex = 4;
             this.rightwardPictureBox.TabStop = false;
@@ -105,9 +105,9 @@ namespace GameProject
             // leftwardPictureBox
             // 
             this.leftwardPictureBox.Image = global::GameProject.Properties.Resources.Enemy;
-            this.leftwardPictureBox.Location = new System.Drawing.Point(354, 429);
+            this.leftwardPictureBox.Location = new System.Drawing.Point(676, 471);
             this.leftwardPictureBox.Name = "leftwardPictureBox";
-            this.leftwardPictureBox.Size = new System.Drawing.Size(93, 97);
+            this.leftwardPictureBox.Size = new System.Drawing.Size(65, 66);
             this.leftwardPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.leftwardPictureBox.TabIndex = 5;
             this.leftwardPictureBox.TabStop = false;
@@ -117,7 +117,7 @@ namespace GameProject
             this.objectCountLabel.AutoSize = true;
             this.objectCountLabel.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.objectCountLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.objectCountLabel.Location = new System.Drawing.Point(336, 9);
+            this.objectCountLabel.Location = new System.Drawing.Point(56, 9);
             this.objectCountLabel.Name = "objectCountLabel";
             this.objectCountLabel.Size = new System.Drawing.Size(122, 27);
             this.objectCountLabel.TabIndex = 6;

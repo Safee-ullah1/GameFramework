@@ -7,28 +7,20 @@ namespace SectionA2020CS13Framework
     public class ObjectFactory
     {
         int[] objectCount = new int[10];
-        private static ObjectFactory counterInstance;
+        MovementFactory movementFactory = MovementFactory.Instance();
+        private static ObjectFactory factoryInstance;
         private ObjectFactory() { }
         public static ObjectFactory Instance()
         {
-            if (counterInstance == null)
-                counterInstance = new ObjectFactory();
-            return counterInstance;
+            if (factoryInstance == null) 
+                factoryInstance = new ObjectFactory();
+
+            return factoryInstance;
         }
-        public GameObject createObject(Control objectPicture, IMovement objectMovement, ObjectType objectType, float objectGravity = 1)
+        public GameObject createObject(Control objectPicture, MovementType movementType, ObjectType objectType, float objectGravity = 1)
         {
             objectCount[(int)objectType]++;
-            return new GameObject(objectPicture, objectMovement, objectGravity);
-        }
-        public GameObject createObject(Image objectImage, Point objectPosition, IMovement objectMovement, ObjectType objectType, float objectGravity = 1)
-        {
-            objectCount[(int)objectType]++;
-            return new GameObject(objectImage, objectPosition, objectMovement, objectGravity);
-        }
-        public GameObject createObject(Image objectImage, Point objectPosition, Size objectSize, IMovement objectMovement, ObjectType objectType, float objectGravity = 1)
-        {
-            objectCount[(int)objectType]++;
-            return new GameObject(objectImage, objectPosition, objectSize, objectMovement, objectGravity);
+            return new GameObject(objectPicture, movementFactory.createMovement(movementType), objectGravity);
         }
         public int getCount(ObjectType objectType) => objectCount[(int)objectType];
         public int getTotalObjectsCount()

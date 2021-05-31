@@ -18,7 +18,7 @@ namespace SectionA2020CS13Framework
         public float AccelerationX { get => accelerationX;}
         public float AccelerationY { get => accelerationY;}
         public float Gravity { get => gravity; set => gravity = value; }
-
+        internal Form ObjectForm { get => objectToAttach?.FindForm(); }
         public PhysicsComponent(Control objectToAttach, float gravity = 0)
         {
             this.objectToAttach = objectToAttach;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 namespace SectionA2020CS13Framework
 {
-    public class MovementPatrol : IMovement
+    public class MovementPatrol
     {
         int strideLength, movementSpeed;
         PatrolMode patrolMode;

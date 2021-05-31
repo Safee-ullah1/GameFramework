@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace SectionA2020CS13Framework
 {
-    public class MovementCircular :IMovement
+    class MovementCircular 
     {
         Control objectToMove;
         int startX, startY;
