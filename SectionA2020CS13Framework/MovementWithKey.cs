@@ -12,7 +12,7 @@ namespace SectionA2020CS13Framework
         public MovementWithKey():base(MovementType.keyBoard, true) { }
         public void update(PhysicsComponent physics)
         {
-            physics.Gravity = -1;
+            physics.Gravity = 0;
             if (!firstTimeCheck)
             {
                 this.physics = physics;

@@ -10,7 +10,7 @@ namespace SectionA2020CS13Framework
         private static readonly object locker = new object();
         List<IMovement> available = new List<IMovement>();
         List<IMovement> occupied = new List<IMovement>();
-        int[] movementCount = new int[3];
+        int[] movementCount = new int[4];
         private MovementFactory() { }
         public static MovementFactory Instance()
         {
@@ -40,6 +40,7 @@ namespace SectionA2020CS13Framework
                     IMovement newMovement;
                     if (movementType == MovementType.right) newMovement = new MovementRight();
                     else if (movementType == MovementType.left) newMovement = new MovementLeft();
+                    else if (movementType == MovementType.nonMoving) newMovement = new MovementNone();
                     else newMovement = new MovementWithKey();
 
                     if (newMovement.IsExclusive) occupied.Add(newMovement);
@@ -76,6 +77,7 @@ namespace SectionA2020CS13Framework
     {
         keyBoard,
         right,
-        left
+        left,
+        nonMoving
     }
 }

@@ -115,11 +115,11 @@ namespace GameProject
             // objectCountLabel
             // 
             this.objectCountLabel.AutoSize = true;
-            this.objectCountLabel.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.objectCountLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.objectCountLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.objectCountLabel.Location = new System.Drawing.Point(56, 9);
+            this.objectCountLabel.Location = new System.Drawing.Point(12, 9);
             this.objectCountLabel.Name = "objectCountLabel";
-            this.objectCountLabel.Size = new System.Drawing.Size(122, 27);
+            this.objectCountLabel.Size = new System.Drawing.Size(97, 22);
             this.objectCountLabel.TabIndex = 6;
             this.objectCountLabel.Text = "Objects: 0";
             // 
