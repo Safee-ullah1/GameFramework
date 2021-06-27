@@ -7,7 +7,7 @@ namespace SectionA2020CS13Framework
     public class MovementWithKey : Movement, IMovement
     {
         PhysicsComponent physics;
-        int movementSpeed = 5;
+        int movementSpeed = 10;
         bool firstTimeCheck;
         public MovementWithKey():base(MovementType.keyBoard, true) { }
         public void update(PhysicsComponent physics)

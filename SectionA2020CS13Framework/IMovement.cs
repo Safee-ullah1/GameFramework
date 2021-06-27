@@ -12,4 +12,8 @@ namespace SectionA2020CS13Framework
         public bool IsExclusive { get; }
         void update(PhysicsComponent physics);
     }
+    public interface ILinearDirection
+    {
+        void changeDirection(MovementType direction);
+    }
 }

@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using System.Drawing;
 namespace SectionA2020CS13Framework
 {
-    public class MovementPatrol
+    public class MovementPatrol : Movement, IMovement
     {
         int strideLength, movementSpeed;
         PatrolMode patrolMode;
         bool startFlag;
         Point startPoint;
-        public MovementPatrol(int strideLength, int movementSpeed, PatrolMode patrolMode)
+        public MovementPatrol(int strideLength, int movementSpeed, PatrolMode patrolMode) : base(MovementType.patrol, false)
         {
             this.strideLength = strideLength;
             this.movementSpeed = movementSpeed;
             this.patrolMode = patrolMode;
+        }
+        public MovementPatrol() : base(MovementType.patrol, false)
+        {
+            this.strideLength = 400;
+            this.movementSpeed = 5;
+            this.patrolMode = PatrolMode.leftRight;
         }
         public void update(PhysicsComponent physics)
         {

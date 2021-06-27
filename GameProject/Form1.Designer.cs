@@ -31,19 +31,18 @@ namespace GameProject
         {
             this.components = new System.ComponentModel.Container();
             this.gameLoopTimer = new System.Windows.Forms.Timer(this.components);
-            this.playerPictureBox = new System.Windows.Forms.PictureBox();
-            this.CircularPictureBox = new System.Windows.Forms.PictureBox();
-            this.UDPatrolPictureBox = new System.Windows.Forms.PictureBox();
-            this.LRPatrolPictureBox = new System.Windows.Forms.PictureBox();
-            this.rightwardPictureBox = new System.Windows.Forms.PictureBox();
-            this.leftwardPictureBox = new System.Windows.Forms.PictureBox();
             this.objectCountLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.playerPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CircularPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UDPatrolPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LRPatrolPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rightwardPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leftwardPictureBox)).BeginInit();
+            this.alienPictureBox2 = new System.Windows.Forms.PictureBox();
+            this.alienPictureBox1 = new System.Windows.Forms.PictureBox();
+            this.alienPictureBox3 = new System.Windows.Forms.PictureBox();
+            this.alienPictureBox4 = new System.Windows.Forms.PictureBox();
+            this.shipPictureBox = new System.Windows.Forms.PictureBox();
+            this.asteroidSpawnTimer = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.alienPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alienPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alienPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alienPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shipPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // gameLoopTimer
@@ -51,66 +50,6 @@ namespace GameProject
             this.gameLoopTimer.Enabled = true;
             this.gameLoopTimer.Interval = 20;
             this.gameLoopTimer.Tick += new System.EventHandler(this.gameLoopTimer_Tick);
-            // 
-            // playerPictureBox
-            // 
-            this.playerPictureBox.Image = global::GameProject.Properties.Resources.Player;
-            this.playerPictureBox.Location = new System.Drawing.Point(56, 61);
-            this.playerPictureBox.Name = "playerPictureBox";
-            this.playerPictureBox.Size = new System.Drawing.Size(93, 97);
-            this.playerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.playerPictureBox.TabIndex = 0;
-            this.playerPictureBox.TabStop = false;
-            // 
-            // CircularPictureBox
-            // 
-            this.CircularPictureBox.Image = global::GameProject.Properties.Resources.Enemy;
-            this.CircularPictureBox.Location = new System.Drawing.Point(676, 372);
-            this.CircularPictureBox.Name = "CircularPictureBox";
-            this.CircularPictureBox.Size = new System.Drawing.Size(65, 61);
-            this.CircularPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CircularPictureBox.TabIndex = 1;
-            this.CircularPictureBox.TabStop = false;
-            // 
-            // UDPatrolPictureBox
-            // 
-            this.UDPatrolPictureBox.Image = global::GameProject.Properties.Resources.Enemy;
-            this.UDPatrolPictureBox.Location = new System.Drawing.Point(679, 231);
-            this.UDPatrolPictureBox.Name = "UDPatrolPictureBox";
-            this.UDPatrolPictureBox.Size = new System.Drawing.Size(62, 64);
-            this.UDPatrolPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.UDPatrolPictureBox.TabIndex = 2;
-            this.UDPatrolPictureBox.TabStop = false;
-            // 
-            // LRPatrolPictureBox
-            // 
-            this.LRPatrolPictureBox.Image = global::GameProject.Properties.Resources.Enemy;
-            this.LRPatrolPictureBox.Location = new System.Drawing.Point(12, 196);
-            this.LRPatrolPictureBox.Name = "LRPatrolPictureBox";
-            this.LRPatrolPictureBox.Size = new System.Drawing.Size(65, 68);
-            this.LRPatrolPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LRPatrolPictureBox.TabIndex = 3;
-            this.LRPatrolPictureBox.TabStop = false;
-            // 
-            // rightwardPictureBox
-            // 
-            this.rightwardPictureBox.Image = global::GameProject.Properties.Resources.Enemy;
-            this.rightwardPictureBox.Location = new System.Drawing.Point(12, 346);
-            this.rightwardPictureBox.Name = "rightwardPictureBox";
-            this.rightwardPictureBox.Size = new System.Drawing.Size(65, 65);
-            this.rightwardPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rightwardPictureBox.TabIndex = 4;
-            this.rightwardPictureBox.TabStop = false;
-            // 
-            // leftwardPictureBox
-            // 
-            this.leftwardPictureBox.Image = global::GameProject.Properties.Resources.Enemy;
-            this.leftwardPictureBox.Location = new System.Drawing.Point(676, 471);
-            this.leftwardPictureBox.Name = "leftwardPictureBox";
-            this.leftwardPictureBox.Size = new System.Drawing.Size(65, 66);
-            this.leftwardPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.leftwardPictureBox.TabIndex = 5;
-            this.leftwardPictureBox.TabStop = false;
             // 
             // objectCountLabel
             // 
@@ -123,6 +62,63 @@ namespace GameProject
             this.objectCountLabel.TabIndex = 6;
             this.objectCountLabel.Text = "Objects: 0";
             // 
+            // alienPictureBox2
+            // 
+            this.alienPictureBox2.Image = global::GameProject.Properties.Resources.alien;
+            this.alienPictureBox2.Location = new System.Drawing.Point(12, 61);
+            this.alienPictureBox2.Name = "alienPictureBox2";
+            this.alienPictureBox2.Size = new System.Drawing.Size(92, 75);
+            this.alienPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alienPictureBox2.TabIndex = 7;
+            this.alienPictureBox2.TabStop = false;
+            // 
+            // alienPictureBox1
+            // 
+            this.alienPictureBox1.Image = global::GameProject.Properties.Resources.alien;
+            this.alienPictureBox1.Location = new System.Drawing.Point(110, 61);
+            this.alienPictureBox1.Name = "alienPictureBox1";
+            this.alienPictureBox1.Size = new System.Drawing.Size(92, 75);
+            this.alienPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alienPictureBox1.TabIndex = 8;
+            this.alienPictureBox1.TabStop = false;
+            // 
+            // alienPictureBox3
+            // 
+            this.alienPictureBox3.Image = global::GameProject.Properties.Resources.alien;
+            this.alienPictureBox3.Location = new System.Drawing.Point(593, 160);
+            this.alienPictureBox3.Name = "alienPictureBox3";
+            this.alienPictureBox3.Size = new System.Drawing.Size(92, 75);
+            this.alienPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alienPictureBox3.TabIndex = 9;
+            this.alienPictureBox3.TabStop = false;
+            this.alienPictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // alienPictureBox4
+            // 
+            this.alienPictureBox4.Image = global::GameProject.Properties.Resources.alien;
+            this.alienPictureBox4.Location = new System.Drawing.Point(691, 160);
+            this.alienPictureBox4.Name = "alienPictureBox4";
+            this.alienPictureBox4.Size = new System.Drawing.Size(92, 75);
+            this.alienPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.alienPictureBox4.TabIndex = 10;
+            this.alienPictureBox4.TabStop = false;
+            // 
+            // shipPictureBox
+            // 
+            this.shipPictureBox.Image = global::GameProject.Properties.Resources.ship;
+            this.shipPictureBox.Location = new System.Drawing.Point(319, 466);
+            this.shipPictureBox.Name = "shipPictureBox";
+            this.shipPictureBox.Size = new System.Drawing.Size(154, 113);
+            this.shipPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.shipPictureBox.TabIndex = 11;
+            this.shipPictureBox.TabStop = false;
+            // 
+            // asteroidSpawnTimer
+            // 
+            this.asteroidSpawnTimer.Enabled = true;
+            this.asteroidSpawnTimer.Interval = 10000;
+            this.asteroidSpawnTimer.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -130,21 +126,19 @@ namespace GameProject
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(6)))), ((int)(((byte)(34)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 581);
+            this.Controls.Add(this.shipPictureBox);
+            this.Controls.Add(this.alienPictureBox4);
+            this.Controls.Add(this.alienPictureBox3);
+            this.Controls.Add(this.alienPictureBox1);
+            this.Controls.Add(this.alienPictureBox2);
             this.Controls.Add(this.objectCountLabel);
-            this.Controls.Add(this.leftwardPictureBox);
-            this.Controls.Add(this.rightwardPictureBox);
-            this.Controls.Add(this.LRPatrolPictureBox);
-            this.Controls.Add(this.UDPatrolPictureBox);
-            this.Controls.Add(this.CircularPictureBox);
-            this.Controls.Add(this.playerPictureBox);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.playerPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CircularPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UDPatrolPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LRPatrolPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rightwardPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.leftwardPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alienPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alienPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alienPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alienPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shipPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,14 +149,16 @@ namespace GameProject
       
         private System.Windows.Forms.Timer gameLoopTimer;
         private System.Windows.Forms.PictureBox player;
-        private System.Windows.Forms.PictureBox CircularPictureBox;
-        private System.Windows.Forms.PictureBox UDPatrolPictureBox;
-        private System.Windows.Forms.PictureBox LRPatrolPictureBox;
-        private System.Windows.Forms.PictureBox rightwardPictureBox;
         private System.Windows.Forms.PictureBox leftwardEnemy;
-        private System.Windows.Forms.PictureBox leftwardPictureBox;
-        private System.Windows.Forms.PictureBox playerPictureBox;
         private System.Windows.Forms.Label objectCountLabel;
+        private System.Windows.Forms.PictureBox alienPictureBox2;
+        private System.Windows.Forms.PictureBox alienPictureBox1;
+        private System.Windows.Forms.PictureBox alienPictureBox3;
+        private System.Windows.Forms.PictureBox alienPictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox ship;
+        private System.Windows.Forms.PictureBox shipPictureBox;
+        private System.Windows.Forms.Timer asteroidSpawnTimer;
     }
 }
 

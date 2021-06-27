@@ -27,6 +27,11 @@ namespace SectionA2020CS13Framework
             objectCount[(int)objectType]++;
             return new GameObject(objectPicture, movementFactory.createMovement(movementType), objectType, objectGravity);
         }
+        public GameObject createObject(Control objectPicture, IMovement movement, ObjectType objectType, float objectGravity = 1)
+        {
+            objectCount[(int)objectType]++;
+            return new GameObject(objectPicture, movement, objectType, objectGravity);
+        }
         public int getCount(ObjectType objectType) => objectCount[(int)objectType];
         public int getTotalObjectsCount()
         {

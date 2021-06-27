@@ -4,14 +4,14 @@ using System.Text;
 
 namespace SectionA2020CS13Framework
 {
-    public class MovementLeft : Movement, IMovement
+    public class MovementDownward : Movement, IMovement
     {
-        int movementSpeed = 5;
-        public MovementLeft():base(MovementType.left, false) { }
+        int movementSpeed = 3;
+        public MovementDownward() : base(MovementType.right, false) { }
         public void update(PhysicsComponent physics)
         {
             physics.Gravity = 0;
-            physics.setSpeed(-movementSpeed, 0);
+            physics.setSpeed(0, movementSpeed);
         }
     }
 }
