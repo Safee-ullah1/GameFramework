@@ -25,7 +25,7 @@ namespace SectionA2020CS13Framework
         public GameObject createObject(Control objectPicture, MovementType movementType, ObjectType objectType, float objectGravity = 1)
         {
             objectCount[(int)objectType]++;
-            return new GameObject(objectPicture, movementFactory.createMovement(movementType), objectType, objectGravity);
+            return new GameObject(objectPicture, movementFactory.createMovement(movementType), objectGravity);
         }
         public GameObject createObject(Control objectPicture, IMovement movement, ObjectType objectType, float objectGravity = 1)
         {
